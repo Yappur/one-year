@@ -2,13 +2,14 @@
 
 import { useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { BookCover } from "@/oneyear/components/book-cover"
-import { RomanticPhrases } from "@/oneyear/components/romantic-phrases"
-import { PhotoAlbum } from "@/oneyear/components/photo-album"
-import { FloatingHearts } from "@/oneyear/components/floating-hearts"
-import { Sparkles } from "@/oneyear/components/sparkles"
+import { BookCover } from "@/components/book-cover"
+import { RomanticPhrases } from "@/components/romantic-phrases"
+import { PhotoAlbum } from "@/components/photo-album"
+import { ThankYou } from "@/components/thank-you"
+import { FloatingHearts } from "@/components/floating-hearts"
+import { Sparkles } from "@/components/sparkles"
 
-type Stage = "cover" | "opening" | "phrases" | "album"
+type Stage = "cover" | "opening" | "phrases" | "album" | "thank-you"
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>("cover")
@@ -21,6 +22,20 @@ export default function Home() {
   const handlePhrasesComplete = useCallback(() => {
     setStage("album")
   }, [])
+
+  const handleAlbumComplete = useCallback(() => {
+    setStage("thank-you")
+  }, [])
+
+  const handlePreviousStage = useCallback(() => {
+    if (stage === "thank-you") {
+      setStage("album")
+    } else if (stage === "album") {
+      setStage("phrases")
+    } else if (stage === "phrases") {
+      setStage("cover")
+    }
+  }, [stage])
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
@@ -87,9 +102,23 @@ export default function Home() {
             key="album"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <PhotoAlbum onComplete={handleAlbumComplete} onPrevious={handlePreviousStage} />
+          </motion.div>
+        )}
+
+        {stage === "thank-you" && (
+          <motion.div
+            key="thank-you"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <PhotoAlbum />
+            <ThankYou 
+              photoSrc="/amarilla.jpeg" 
+              onPrevious={handlePreviousStage}
+            />
           </motion.div>
         )}
       </AnimatePresence>

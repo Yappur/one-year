@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion"
 
 // ─── EDIT YOUR PHRASES HERE ───
 const PHRASES = [
-  "Every love story is beautiful, but ours is my favorite.",
-  "In your arms, I found my forever home.",
+  "Desde el primer dia que te vi supe que eras para mí.",
+  "Este año estuvo lleno de momentos que me confirmaron que sos la persona que buscaba.",
   "You are the poem I never knew how to write.",
   "With you, every moment becomes a treasured memory.",
-  "My heart knew you before my eyes ever did.",
-]
+  "Gracias por todo, gracias por hacerlo inolvidable..",
+];
 // ──────────────────────────────
 
 interface RomanticPhrasesProps {
