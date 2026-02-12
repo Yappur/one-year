@@ -116,7 +116,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <ThankYou 
-              photoSrc="/amarilla.jpeg" 
+              photoSrc="/spcode.jpeg" 
               onPrevious={handlePreviousStage}
             />
           </motion.div>

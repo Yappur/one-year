@@ -1,45 +1,50 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // ─── EDIT YOUR PHRASES HERE ───
 const PHRASES = [
   "Desde el primer dia que te vi supe que eras para mí.",
   "Este año estuvo lleno de momentos que me confirmaron que sos la persona que buscaba.",
-  "You are the poem I never knew how to write.",
-  "With you, every moment becomes a treasured memory.",
-  "Gracias por todo, gracias por hacerlo inolvidable..",
+  "Nunca me olvidaria de nuestro primer beso.",
+  "Tu sonrisa es mi luz, tu risa mi mayor deseo.",
+  "Sos mi calma en medio de cualquier tormenta.",
+  "Gracias por hacerme sentir tan especial y amado.",
+  "Cada momento a tu lado, me siento un poco mejor.",
+  "Si naciera mil veces, mil veces te elegiría a vos.",
+  "Gracias por todo, gracias por hacerlo inolvidable.",
+  "Sos mi amor eterno, sabelo siempre.",
 ];
 // ──────────────────────────────
 
 interface RomanticPhrasesProps {
-  onComplete: () => void
+  onComplete: () => void;
 }
 
 export function RomanticPhrases({ onComplete }: RomanticPhrasesProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const showDuration = 3500
-    const fadeDuration = 800
+    const showDuration = 3500;
+    const fadeDuration = 800;
 
     const timer = setTimeout(() => {
-      setIsVisible(false)
+      setIsVisible(false);
 
       setTimeout(() => {
         if (currentIndex < PHRASES.length - 1) {
-          setCurrentIndex((prev) => prev + 1)
-          setIsVisible(true)
+          setCurrentIndex((prev) => prev + 1);
+          setIsVisible(true);
         } else {
-          onComplete()
+          onComplete();
         }
-      }, fadeDuration)
-    }, showDuration)
+      }, fadeDuration);
+    }, showDuration);
 
-    return () => clearTimeout(timer)
-  }, [currentIndex, onComplete])
+    return () => clearTimeout(timer);
+  }, [currentIndex, onComplete]);
 
   return (
     <motion.div
@@ -70,7 +75,13 @@ export function RomanticPhrases({ onComplete }: RomanticPhrasesProps) {
 
       <div className="relative z-10 flex max-w-2xl flex-col items-center">
         {/* Decorative top flourish */}
-        <svg className="mb-8 h-6 w-32 text-primary/20" viewBox="0 0 160 24" fill="none" stroke="currentColor" strokeWidth="1">
+        <svg
+          className="mb-8 h-6 w-32 text-primary/20"
+          viewBox="0 0 160 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        >
           <path d="M0 12 Q40 0 80 12 Q120 24 160 12" />
           <path d="M20 12 Q60 4 80 12 Q100 20 140 12" />
         </svg>
@@ -83,15 +94,21 @@ export function RomanticPhrases({ onComplete }: RomanticPhrasesProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.850, ease: "easeInOut" }}
             >
-              {`"${PHRASES[currentIndex]}"`}
+              {`${PHRASES[currentIndex]}`}
             </motion.p>
           )}
         </AnimatePresence>
 
         {/* Decorative bottom flourish */}
-        <svg className="mt-8 h-6 w-32 text-primary/20" viewBox="0 0 160 24" fill="none" stroke="currentColor" strokeWidth="1">
+        <svg
+          className="mt-8 h-6 w-32 text-primary/20"
+          viewBox="0 0 160 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        >
           <path d="M0 12 Q40 24 80 12 Q120 0 160 12" />
           <path d="M20 12 Q60 20 80 12 Q100 4 140 12" />
         </svg>
@@ -102,12 +119,16 @@ export function RomanticPhrases({ onComplete }: RomanticPhrasesProps) {
             <div
               key={`dot-${i}-progress`}
               className={`h-2 w-2 rounded-full transition-all duration-500 ${
-                i === currentIndex ? "scale-125 bg-primary" : i < currentIndex ? "bg-primary/40" : "bg-border"
+                i === currentIndex
+                  ? "scale-125 bg-primary"
+                  : i < currentIndex
+                    ? "bg-primary/40"
+                    : "bg-border"
               }`}
             />
           ))}
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

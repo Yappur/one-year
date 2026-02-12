@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Playfair_Display, Dancing_Script } from "next/font/google";
+import { HeartCursor } from "@/components/heart-cursor";
 
 import "./globals.css";
 
@@ -42,11 +43,16 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f5ebe0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${_playfair.variable} ${_dancing.variable} font-serif antialiased`}
       >
+        <HeartCursor />
         {children}
       </body>
     </html>

@@ -17,10 +17,10 @@ const PHOTOS = [
   //SECCION 2 - casitaa
   {
     src: "/casa.jpeg",
-    caption: "Rain or shine, always together",
+    caption: "Que le pasaba en el peloo",
     rotation: -2,
   },
-  { src: "/casa2.jpeg", caption: "Ella sabia, que sabiaa", rotation: -3 },
+  { src: "/casa2.jpeg", caption: "Tan bella como siempre", rotation: -3 },
 
   // LLUVIA
   {
@@ -38,28 +38,28 @@ const PHOTOS = [
 
   { src: "/chefsita.jpeg", caption: "Feliz Jarwolin", rotation: 3 },
   {
-    src: "/biblio.jpeg",
-    caption: "En Cuspi god",
+    src: "/fiesta.jpeg",
+    caption: "Año nuevo con mi amorcitoo",
     rotation: 2,
   },
 
   //VIAJESITOS
   {
     src: "/viajandin.jpeg",
-    caption: "Rain or shine, always together",
+    caption: "A donde iban los chabonsitos",
     rotation: -2,
   },
-  { src: "/viajandin2.jpeg", caption: "Holding on to forever", rotation: 3 },
+  { src: "/viajandin2.jpeg", caption: "acelere chofer", rotation: 3 },
 
   //animalitos
   {
     src: "/inutu.jpeg",
-    caption: "Dancing through life with you",
+    caption: "Traumado",
     rotation: -1,
   },
   {
     src: "/anita.jpeg",
-    caption: "Every sunset with you is perfect",
+    caption: "Perseguida",
     rotation: 2,
   },
 
@@ -70,34 +70,97 @@ const PHOTOS = [
     caption: "7 - 0 jaja",
     rotation: 2,
   },
+
+  //Sanmi
   {
-    src: "/casa.jpeg",
-    caption: "Rain or shine, always together",
+    src: "/sanmi.jpeg",
+    caption: "En el parquee",
     rotation: -2,
   },
-  { src: "/chefsita.jpeg", caption: "Holding on to forever", rotation: 3 },
+  { src: "/sanmi2.jpeg", caption: "GENGAARR", rotation: 3 },
+
+  //Desayunos
   {
-    src: "/empilchao.jpeg",
-    caption: "Dancing through life with you",
+    src: "/peleaditos.jpeg",
+    caption: "Peleaditos pero despues amaditos",
+    rotation: -2,
+  },
+  { src: "/deayuno.jpeg", caption: "Cuando hacia friiooo", rotation: 3 },
+  //Merienditas
+  {
+    src: "/biblio.jpeg",
+    caption: "Cuspi god merienda",
+    rotation: -2,
+  },
+  { src: "/panqueque.jpeg", caption: "Panqueque", rotation: 3 },
+
+  //Cenas
+  {
+    src: "/cena.jpeg",
+    caption: "Viendo la casa de papeel",
     rotation: -1,
   },
   {
-    src: "/enxio.jpeg",
-    caption: "Every sunset with you is perfect",
+    src: "/hellokitty.jpeg",
+    caption: "Los mas cools del MC",
+    rotation: 2,
+  },
+  //Confort en casa
+  {
+    src: "/casa3.jpeg",
+    caption: "Ese día bailamos Just Dance",
+    rotation: -2,
+  },
+  { src: "/casa4.jpeg", caption: "Mi gran amor", rotation: 3 },
+
+  //Pose
+  {
+    src: "/pose.jpeg",
+    caption: "AHHH",
+    rotation: -1,
+  },
+  {
+    src: "/pose2.jpeg",
+    caption: "AHHH",
+    rotation: 2,
+  },
+
+  //Plazitas
+  {
+    src: "/plazita.jpeg",
+    caption: "Ella sabia, que sabiaa",
+    rotation: -2,
+  },
+  { src: "/plazita2.jpeg", caption: "Ella sabia, que sabiaa", rotation: 3 },
+  //Amor
+  {
+    src: "/amor.jpeg",
+    caption: "AHHH ME LAME",
+    rotation: -1,
+  },
+  {
+    src: "/amor2.jpeg",
+    caption: "Zamira en plan: emm que haces",
     rotation: 2,
   },
 ];
 
 const PAGE_DESCRIPTIONS = [
-  "Las flores que encontramos ese día de primavera 🌸", // página 1 (fotos 1-2)
-  "Nuestra casita, llueva o truene siempre juntos 🏠", // página 2 (fotos 3-4)
-  "Ni la lluvia nos paró, empilchaos y felices ☔", // página 3 (fotos 5-6)
-  "Las fiestas más divertidas de nuestra vida 🎃", // página 4 (fotos 7-8)
-  "Viajecitos que quedaron grabados para siempre ✈️", // página 5 (fotos 9-10)
-  "Los animalitos que nos robaron el corazón 🐾", // página 6 (fotos 11-12)
-  "Los jueguitos donde no andaba la palanca 😑🎮", // página 7 (fotos 13-14)
-  "Más recuerdos que atesoramos juntos 💛", // página 8 (fotos 15-16)
-  "Últimos momentos, pero no los menos especiales 🌅", // página 9 (fotos 17-18)
+  "Florcitaaass 🌸", // página 1 (fotos 1-2)
+  "En Casita de ZamiUwU 🏠", // página 2 (fotos 3-4)
+  "Dias de lluvia juntitoos 🌧", // página 3 (fotos 5-6)
+  "Noche de fiestaas 🎉", // página 4 (fotos 7-8)
+  "Viajecitooss 🚗", // página 5 (fotos 9-10)
+  "Son 100% compatibles 🐾", // página 6 (fotos 11-12)
+  "Días de Jueguitos 🎮", // página 7 (fotos 13-14)
+  "De aventuras por sanmi", // página 8 (fotos 15-16)
+  "Desayunos 🤍",
+  "Merienditas 💛", // página 8 (fotos 15-16)
+  "Cenitass buee tanto comian",
+"Confort en casa 🥰", // página 8 (fotos 15-16)
+  "AHHHH",
+  "PLAZITAASS 🌳", 
+  "Amandonooos 🌅", // página 9 (fotos 17-18)
 ];
 
 const PolaroidPhoto = memo(function PolaroidPhoto({

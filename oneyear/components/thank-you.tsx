@@ -12,7 +12,8 @@ interface ThankYouProps {
 
 export function ThankYou({ photoSrc, onPrevious }: ThankYouProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const message = "Gracias por compartir tantos momentos juntos";
+  const message =
+    "Gracias por compartir tantos momentos juntos, este es el primer año de muchos. Sos el amor de mi vida, sabelo siempre.";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,10 +67,9 @@ export function ThankYou({ photoSrc, onPrevious }: ThankYouProps) {
         <path d="M20 12 Q60 4 80 12 Q100 20 140 12" />
       </svg>
 
-      <div className="relative z-10 flex max-w-4xl flex-col items-center justify-center gap-12 md:flex-row md:gap-16">
-        {/* Photo section */}
+      <div className="relative z-10 flex max-w-xl flex-col items-center">
         <motion.div
-          className="relative h-64 w-64 flex-shrink-0 md:h-80 md:w-80"
+          className="mb-10 w-64 sm:w-72 md:w-80 lg:w-96"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -77,16 +77,16 @@ export function ThankYou({ photoSrc, onPrevious }: ThankYouProps) {
           <Image
             src={photoSrc}
             alt="Foto especial"
-            fill
-            className="object-cover rounded-lg"
-            sizes="(max-width: 768px) 256px, 320px"
-            quality={85}
+            width={400}
+            height={600}
+            className="rounded-lg object-contain w-full h-auto"
+            quality={100}
             priority
           />
         </motion.div>
 
         {/* Message section */}
-        <div className="flex flex-col items-center md:items-start gap-6">
+        <div className="flex flex-col items-center">
           <AnimatePresence mode="wait">
             {isVisible && (
               <motion.div
@@ -148,11 +148,11 @@ function TypewriterText({ text }: { text: string }) {
   }, [index, text]);
 
   return (
-    <p className="text-balance font-cursive text-3xl leading-relaxed text-foreground md:text-4xl">
+    <p className="text-balance text-center font-cursive text-xl leading-relaxed text-foreground sm:text-2xl md:text-3xl lg:text-4xl">
       "{displayedText}"
       {index < text.length && (
         <motion.span
-          className="inline-block ml-1 h-8 w-0.5 bg-foreground md:h-10"
+          className="inline-block ml-1 h-6 w-0.5 bg-foreground sm:h-7 md:h-8 lg:h-10"
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.8, repeat: Infinity }}
         />
